@@ -10,6 +10,17 @@ const headers = {
   'Authorization': token
 }
 
+export const getCategories = () =>
+  fetch(`${api}/categories`, {
+      method: 'GET',
+      headers
+  }).then(res => res.json())
+
+export const getPosts = () =>
+  fetch(`${api}/posts`, {
+      headers
+  }).then(res => res.json());
+
 // Get all the comments for a single post
 export const getComments = (id) =>
   fetch(`${api}/posts/${id}/comments`, {
@@ -17,30 +28,16 @@ export const getComments = (id) =>
     headers
   }).then(res => res.json())
 
-
-
-export const getAll = () =>
-  fetch(`${api}/books`, { headers })
-    .then(res => res.json())
-    .then(data => data.books)
-
-export const update = (book, shelf) =>
-  fetch(`${api}/books/${book.id}`, {
-    method: 'PUT',
-    headers: {
-      ...headers,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ shelf })
-  }).then(res => res.json())
-
-export const search = (query) =>
-  fetch(`${api}/search`, {
-    method: 'POST',
-    headers: {
-      ...headers,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ query })
-  }).then(res => res.json())
-    .then(data => data.books)
+export const addPost = postData =>
+  fetch(`${api}/posts`, {
+      method: "POST",
+      headers: {
+          ...headers,
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postData)
+})
+  .then(res => res.json())
+  .catch(function(error) {
+    console.log("Unable to add post: " + error);
+});
