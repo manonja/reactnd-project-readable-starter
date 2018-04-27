@@ -1,7 +1,7 @@
 import {
     ADD_POST,
     SET_FILTER,
-    SHOW_CATEGORIES,
+    GET_CATEGORIES,
     // POST_CONTENT,
     // COMMENT_POST,
     // COMMENT_USER_POST,

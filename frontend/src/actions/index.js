@@ -1,6 +1,6 @@
 export const ADD_POST= 'ADD_POST'
 export const SET_FILTER = 'SET_FILTER'
-export const SHOW_CATEGORIES = 'SHOW_CATEGORIES'
+export const GET_CATEGORIES = 'GET_CATEGORIES'
 // export const POST_CONTENT = 'POST_CONTENT'
 // export const COMMENT_POST = 'COMMENT_POST'
 // export const COMMENT_USER_POST = 'COMMENT_USER_POST'
@@ -12,9 +12,9 @@ export const SHOW_CATEGORIES = 'SHOW_CATEGORIES'
 // export const DELETE_POST= 'DELETE_POST'
 
 
-export function showCategories ({id, payload }){
+export function getCategories ({id, payload }){
     return {
-        type: SHOW_CATEGORIES,
+        type: GET_CATEGORIES,
         id,
         filter,
     }

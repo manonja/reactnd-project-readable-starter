@@ -1,15 +1,5 @@
 const api = "localhost:3001"
 
-
-
-
-fetch(
-    url,
-    {
-        headers: { 'Authorization': 'whatever-you-want' }
-    }
-)
-
 // Generate a unique token for storing your bookshelf data on the backend server.
 let token = localStorage.token
 if (!token)
