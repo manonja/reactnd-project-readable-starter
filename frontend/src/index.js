@@ -7,6 +7,8 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore} from 'redux';
 import reducer from './reducer';
 import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
+
 
 
 const store = createStore(
@@ -17,6 +19,6 @@ console.log(store);
 
 ReactDOM.render(
     <Provider store={store}>
-      <App/> 
+      <App/>
     </Provider>, document.getElementById('root'));
 registerServiceWorker();
